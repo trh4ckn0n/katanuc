@@ -14,6 +14,10 @@ katanuc by trhacknon .Just a script for use katana and nuclei for find urls with
 
 ## Installation
 
+```bash
+https://github.com/trh4ckn0n/katanuc
+```
+
 1. Installer les dépendances Python :
 
 ```bash
