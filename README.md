@@ -58,6 +58,7 @@ python fuzzscanner.py
 
 ## Structure
 
+```
 .
 ├── output/
 │   ├── katana/
@@ -65,3 +66,4 @@ python fuzzscanner.py
 ├── fuzzscanner.py
 ├── requirements.txt
 └── README.md
+```
