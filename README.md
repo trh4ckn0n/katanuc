@@ -16,26 +16,36 @@ katanuc by trhacknon .Just a script for use katana and nuclei for find urls with
 
 1. Installer les dépendances Python :
 
+```bash
 pip install -r requirements.txt
+```
 
 2. Installer Katana et Nuclei :
 
+```bash
 GO111MODULE=on go install -v github.com/projectdiscovery/katana/cmd/katana@latest
 GO111MODULE=on go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+```
 
 Ajouter ensuite $GOPATH/bin à ton PATH :
 
+```
 export PATH=$PATH:$(go env GOPATH)/bin
+```
 
 3. Télécharger les templates fuzzing de Nuclei :
 
+```bash
 git clone https://github.com/projectdiscovery/fuzzing-templates ~/nuclei-templates-fuzzing
+```
 
 > Adapter le chemin dans la variable TEMPLATES_PATH si besoin.
 
 ## Utilisation
 
+```bash
 python fuzzscanner.py
+```
 
 - Choisir un fichier .txt contenant les domaines (ex: list1.txt)
 - Choisir le nombre de threads
