@@ -73,21 +73,19 @@ def run_nuclei(input_urls_path):
     output_file = target_file.replace(".txt", "_fuzzing.txt")
 
     try:
-        result = subprocess.run([
+        subprocess.run([
             "nuclei", "-l", target_file,
             "-t", TEMPLATES_PATH,
             "-o", output_file,
             "-severity", "info,low,medium,high,critical",
-            "-silent"
-        ], capture_output=True, text=True, check=True)
-
-        for line in result.stdout.strip().split("\n"):
-            if line.strip():
-                console.print(colorize_line(line))
-
+            "-silent",
+            "-stats",
+            "-stats-interval", "5"
+        ], check=True)
     except subprocess.CalledProcessError as e:
-        console.print(f"[red]Erreur Nuclei : {e}[/red]")
-
+        console.print(f"[bold red]Erreur Nuclei : {e}[/bold red]")
+    except Exception as e:
+        console.print(f"[bold red]Autre erreur : {e}[/bold red]")
 def process_domain(domain, progress, task_id):
     katana_out = run_katana(domain)
     progress.advance(task_id)
