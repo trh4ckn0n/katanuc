@@ -60,8 +60,13 @@ python fuzzscanner.py
 
 .
 ├── output/
+
 │   ├── katana/       # Résultats bruts de Katana
+
 │   └── nuclei/       # Résultats filtrés et vulnérabilités
+
 ├── fuzzscanner.py    # Script principal
+
 ├── requirements.txt
+
 └── README.md
